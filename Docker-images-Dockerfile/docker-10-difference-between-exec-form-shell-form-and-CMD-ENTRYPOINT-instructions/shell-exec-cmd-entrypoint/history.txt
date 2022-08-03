@@ -1,0 +1,22 @@
+    1  docker build -t cmd-shell:v1 .
+    2  docker run cmd-shell:v1
+    3  docker build -t cmd-exec:v1 .
+    4  docker run cmd-exec:v1
+    5  docker build -t cmd-shell:v2 .
+    6  docker run cmd-shell:v2
+    7  docker build -t cmd-shell:v2 .
+    8  docker run cmd-shell:v2
+    9  docker build -t cmd-shell:v2 .
+   10  docker run cmd-shell:v2
+   11  docker run cmd-shell:v1 ls
+   12  FROM ubuntu
+   13  ENTRYPOINT echo hello
+   14  # CMD ["echo", "$HOME"]
+   15  # CMD echo $HOME
+   16  # CMD ["echo", "hello"]
+   17  docker build -t entrypoint:v1 .
+   18  docker run entrypoint:v1 ls
+   19  docker build -t entrypoint-cmd .
+   20  docker run entrypoint-cmd
+   21  docker run entrypoint-cmd Osvaldo
+   22  history > history.txt
